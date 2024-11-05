@@ -1,0 +1,63 @@
+[package]
+name = "lego_spec"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [
+    "arch",
+    "driver",
+    "fs",
+    "io",
+    "memory",
+    "network",
+    "process",
+    "timer",
+    "virtualization",
+]
+
+[dependencies]
+arch = { path = "arch" }
+driver = { path = "driver" }
+fs = { path = "fs" }
+io = { path = "io" }
+memory = { path = "memory" }
+network = { path = "network" }
+process = { path = "process" }
+timer = { path = "timer" }
+virtualization = { path = "virtualization" }
+
+[features]
+# architecture module
+arch = []
+# riscv
+rv_dbg = ["arch/rv_dbg", "arch"]
+rv_mch = ["arch/rv_mch", "arch"]
+rv_spv = ["arch/rv_spv", "arch"]
+rv_hpv = ["arch/rv_hpv", "arch"]
+rv_virt = ["arch/rv_virt", "arch"]
+rv_user = ["arch/rv_user", "arch"]
+rv_time = ["arch/rv_time", "arch"]
+# device driver module
+driver = []
+bus = ["driver/bus", "driver"]
+block = ["driver/block", "driver"]
+char = ["driver/char", "driver"]
+net = ["driver/net", "driver"]
+# file system module
+fs = []
+# input/output mode module
+io = []
+# memory management module
+memory = []
+phy = ["memory/phy", "memory"]
+virt = ["memory/virt", "memory"]
+vmp = ["memory/vmp", "memory"]
+# network protocol stack module
+network = []
+# process management module
+process = []
+# timer/clock module
+timer = []
+# virtualization module
+virtualization = []

@@ -1,0 +1,19 @@
+[package]
+name = "arch"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bitflags = "2.*"
+num-derive = "0.*"
+num-traits = { version = "0", default-features = false }
+
+[features]
+# riscv features
+rv_dbg = []
+rv_mch = []
+rv_spv = []
+rv_hpv = []
+rv_virt = []
+rv_user = []
+rv_time = []
